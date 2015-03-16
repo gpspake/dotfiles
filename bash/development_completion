@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+class DevelopmentCompletion
+
+  # Cache the full typed command (eg "d Web").
+  def initialize(command)
+    @command = command
+  end
+
+  # Prepend the current path to each directory name,
+  # filter only paths matching the current typed path,
+  # then tidy up the output.
+  def matches
+    @matches ||= directories.map do |directory|
+      target_directory ? "#{target_directory}/#{directory}" : directory
+    end.select do |directory|
+      directory.downcase[0, typed.length] == typed.downcase
+    end.map do |path|
+      # This should be done last.
+      path.gsub("\\", '')
+    end
+  end
+
+  # Cache the typed path (without the leading "d<space>" part).
+  def typed
+    @typed ||= @command[/\s(.+?)$/, 1] || ''
+  end
+
+  # Cache the target directory.
+  # Eg "d Web/<tab>" or "d Web/my_p<tab>" will set the target directory to "Web".
+  def target_directory
+    @target_directory ||= if typed =~ /\//
+      split  = typed.split('/')
+      joined = split[0...-1].join('/')
+      joined.empty? ? split[0] : joined
+    end
+  end
+
+  # Retrieve a (formatted) list of all directories within the target directory.
+  def directories
+    @directories ||= `cd ~/Development/#{target_directory} ; ls -d */ | tr '' ' '`.split("\n")
+  end
+
+end
+
+# Instantiate a new instance passing in the full typed command and printing the matches.
+puts DevelopmentCompletion.new(ENV["COMP_LINE"]).matches
+exit 0

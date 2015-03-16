@@ -18,7 +18,6 @@ function cd() {
 }
 
 ## "d <tab>" to autocomplete against anything in ~/Development 
-## dir to cd into a project from anywhere - @vongrippen
-## tab complete not working in bash
-function d() { cd ~/Development/$1; }
-function _d() { _files -W ~/Development -/; }
+## http://drawingablank.me/blog/bash-alias-with-subdirectory-tabcompletion.html
+function d() { cd "$HOME/Development/$1"; }
+complete -C ~/.bash/development_completion -o filenames -o nospace d

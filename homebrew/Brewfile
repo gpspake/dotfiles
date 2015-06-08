@@ -1,0 +1,29 @@
+# Install taps
+tap 'caskroom/cask'
+
+# Install system dependencies
+brew 'wget'
+brew 'node'
+brew 'zsh'
+brew 'brew-cask'
+
+# Install applications
+cask '1password'
+cask 'alfred'
+cask 'bettertouchtool'
+cask 'caffeine'
+cask 'dropbox'
+cask 'filezilla'
+cask 'firefox'
+cask 'flux'
+cask 'google-chrome'
+cask 'iterm2'
+cask 'phpstorm'
+cask 'sourcetree'
+cask 'spotify'
+cask 'steam'
+cask 'sublime-text'
+cask 'vagrant'
+cask 'vagrant-manager'
+cask 'virtualbox'
+cask 'vlc'

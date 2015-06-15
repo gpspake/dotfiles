@@ -2,10 +2,12 @@
 tap 'caskroom/cask'
 
 # Install system dependencies
-brew 'wget'
-brew 'node'
-brew 'zsh'
 brew 'brew-cask'
+brew 'node'
+brew 'wget'
+brew 'php56'
+brew 'wp-cli'
+brew 'zsh'
 
 # Install applications
 cask '1password'
@@ -23,6 +25,7 @@ cask 'sourcetree'
 cask 'spotify'
 cask 'steam'
 cask 'sublime-text'
+cask 'transmission'
 cask 'vagrant'
 cask 'vagrant-manager'
 cask 'virtualbox'

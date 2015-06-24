@@ -12,6 +12,8 @@ alias bashsource='source ${DOTFILES_DIRECTORY}/bash/.bash_profile'
 alias zshedit='vim ${DOTFILES_DIRECTORY}/zsh/gpspake.plugin.zsh'
 # source zsh after editing
 alias zshsource='source ${DOTFILES_DIRECTORY}/zsh/gpspake.plugin.zsh'
+# edit hosts
+alias hostsedit='sudo vim /private/etc/hosts'
 # go to dotfiles
 alias dotfiles='cd ${DOTFILES_DIRECTORY}'
 # go to development

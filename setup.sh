@@ -31,8 +31,8 @@ $LINK/vim/.vimrc ~/.vimrc
 $LINK/vim/flattown.vim ~.vim/colors/flattown.vim
 
 ## zsh
-mkdir -p ~/.oh-my-zsh/plugins/gpspake/gpspake.plugin.zsh
-$LINK/zsh/gpspake.plugin.zsh ~/.oh-my-zsh/plugins/gpspake/gpspake.plugin.zsh
+mkdir -p ~/.myzsh/remotes/gpspake/modules/gpspake
+$LINK/zsh/gpspake.plugin.zsh ~/.myzsh/remotes/gpspake/modules/gpspake/gpspake
 
 ## keybindings
 

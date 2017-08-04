@@ -1,5 +1,7 @@
-export DEVELOPMENT_DIRECTORY="$HOME/development"
-export DOTFILES_DIRECTORY="$HOME/dotfiles"
+#!/usr/bin/env bash
+export DEVELOPMENT_DIRECTORY="$HOME/code"
+export DOTFILES_DIRECTORY="$HOME/code/dotfiles"
+export PATH="$(yarn global bin | grep -o '/.*'):$PATH"
 
 # ALIASES
 ## ll to detailed direct list
@@ -9,7 +11,7 @@ alias bashedit='vim ${DOTFILES_DIRECTORY}/bash/.bash_profile'
 # source bash profile after editing
 alias bashsource='source ${DOTFILES_DIRECTORY}/bash/.bash_profile'
 # edit zsh
-alias zshedit='vim ${DOTFILES_DIRECTORY}/zsh/gpspake.plugin.zsh'
+alias zshedit='atom ${DOTFILES_DIRECTORY}/zsh/gpspake.plugin.zsh'
 # source zsh after editing
 alias zshsource='source ${DOTFILES_DIRECTORY}/zsh/gpspake.plugin.zsh'
 # edit hosts
@@ -18,6 +20,8 @@ alias hostsedit='sudo vim /private/etc/hosts'
 alias dotfiles='cd ${DOTFILES_DIRECTORY}'
 # go to development
 alias dev='cd ${DEVELOPMENT_DIRECTORY}'
+#edit hosts
+alias hosts='atom /etc/hosts'
 
 ## ll after cd - @speakingcode
 function cd() {
@@ -25,7 +29,7 @@ function cd() {
   if [ $# -eq 0 ]; then
     new_directory=${HOME};
   fi;
-  builtin cd "${new_directory}" && ll
+  builtin cd "${new_directory}" && ls -la
 }
 
 # h to cd to home - @vongrippen
@@ -36,15 +40,10 @@ compdef _h h
 
 # d to cd to development - @vongrippen
 unalias d
-d() { cd ~/development/$1; }
+code() { cd ~/code/$1; }
 # tab complete d against development
-_d() { _files -W ~/development -/; }
-compdef _d d
+_code() { _files -W ~/code -/; }
+compdef _code code
 
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
-
-
-
-
-

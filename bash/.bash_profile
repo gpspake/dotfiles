@@ -11,19 +11,19 @@ export DOTFILES_DIRECTORY="$CODE_DIRECTORY/dotfiles"
 
 # ALIASES
 ## ll to detailed direct list
-alias ll='ls -la'
+alias ll="ls -la"
 
 #edit bash profile
-alias bashedit='vim ${DOTFILES_DIRECTORY}/bash/.bash_profile'
+alias bashedit="vim ~/.bash_profile"
 
 #source bash profile after editing
-alias bashsource='source ${DOTFILES_DIRECTORY}/bash/.bash_profile'
+alias bashsource="source ~/.bash_profile"
 
 #go to dotfiles
-alias dotfiles='cd ${DOTFILES_DIRECTORY}'
+alias dotfiles="cd ${DOTFILES_DIRECTORY}"
 
 #go to development
-alias dev='cd ${CODE_DIRECTORY}'
+alias dev="cd ${CODE_DIRECTORY}"
 
 ## ll after cd - @speakingcode
 function cd() {

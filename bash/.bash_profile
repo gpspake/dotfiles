@@ -6,20 +6,24 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # PATHS
-export DEVELOPMENT_DIRECTORY="$HOME/development"
-export DOTFILES_DIRECTORY="$HOME/dotfiles"
+export CODE_DIRECTORY="~/Code"
+export DOTFILES_DIRECTORY="$CODE_DIRECTORY/dotfiles"
 
 # ALIASES
 ## ll to detailed direct list
 alias ll='ls -la'
+
 #edit bash profile
 alias bashedit='vim ${DOTFILES_DIRECTORY}/bash/.bash_profile'
+
 #source bash profile after editing
 alias bashsource='source ${DOTFILES_DIRECTORY}/bash/.bash_profile'
+
 #go to dotfiles
 alias dotfiles='cd ${DOTFILES_DIRECTORY}'
+
 #go to development
-alias dev='cd ${DEVELOPMENT_DIRECTORY}'
+alias dev='cd ${CODE_DIRECTORY}'
 
 ## ll after cd - @speakingcode
 function cd() {
@@ -33,7 +37,7 @@ function cd() {
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
-## "d <tab>" to autocomplete against anything in ~/Development 
+## "c <tab>" to autocomplete against anything in Code directory
 ## http://drawingablank.me/blog/bash-alias-with-subdirectory-tabcompletion.html
-function d() { cd "${DEVELOPMENT_DIRECTORY}/$1"; }
+function c() { cd "${CODE_DIRECTORY}/$1"; }
 complete -C ~/.bash/development_completion -o filenames -o nospace d

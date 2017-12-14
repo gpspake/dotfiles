@@ -23,7 +23,7 @@ alias bashsource="source ~/.bash_profile"
 alias dotfiles="cd ${DOTFILES_DIRECTORY}"
 
 #go to development
-alias dev="cd ${CODE_DIRECTORY}"
+alias code="cd ${CODE_DIRECTORY}"
 
 ## ll after cd - @speakingcode
 function cd() {

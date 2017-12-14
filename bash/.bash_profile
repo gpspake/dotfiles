@@ -5,9 +5,14 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# PATH
+export PATH="$PATH:~/bin"
+
 # PATHS
 export CODE_DIRECTORY="~/Code"
 export DOTFILES_DIRECTORY="$CODE_DIRECTORY/dotfiles"
+
+export AZPROXY="http://proxy.autozone.com"
 
 # ALIASES
 ## ll to detailed direct list

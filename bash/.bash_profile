@@ -39,6 +39,8 @@ function cd() {
   builtin cd "${new_directory}" && ll
 }
 
+alias nukenodemodules = "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' \\;"
+
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 

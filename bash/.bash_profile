@@ -5,6 +5,9 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# Custom prompt
+export PS1="\n\[\e[30;1m\]\[\016\]┌─\[\017\](\[\e[34;1m\]\u\[\e[30;1m\])-(\[\e[34;1m\]\@ \d\[\e[30;1m\])->\[\e[30;1m\]\n\[\016\]└\[\017\](\[\[\e[32;1m\]\w\[\e[30;1m\])--> \[\e[0m\]"
+
 # PATH
 export PATH="$PATH:~/bin"
 

@@ -1,6 +1,22 @@
-export CODE_DIRECTORY="/c/Users/gspake/code"
-export DOTFILES_DIRECTORY="/c/Users/gspake/code/dotfiles"
-export HOSTS_PATH="/c/Windows/System32/drivers/etc/hosts"
+# ---------------------
+# Environment Variables
+# ---------------------
+
+# check for wsl https://stackoverflow.com/a/43618657/1827642
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null; then
+  export HOME_DIRECTORY="/c/Users/gspake"
+  export HOSTS_PATH="/c/Windows/System32/drivers/etc/hosts"
+else
+  export HOME_DIRECTORY="~"
+  export HOSTS_PATH="/etc/hosts"
+fi
+
+export CODE_DIRECTORY="${HOME_DIRECTORY}/code"
+export DOTFILES_DIRECTORY="${CODE_DIRECTORY}/dotfiles"
+
+# -------
+# Aliases
+# -------
 
 # ll to detailed direct list
 alias ll='ls -la'
@@ -12,6 +28,10 @@ alias zshsource='source ${DOTFILES_DIRECTORY}/zsh/gpspake/gpspake.plugin.zsh'
 alias dotfiles='cd ${DOTFILES_DIRECTORY}'
 #edit hosts
 alias hosts='sudo vim ${HOSTS_PATH}'
+
+# ---------
+# Functions
+# ---------
 
 ## ll after cd - @speakingcode
 cd() {
@@ -32,9 +52,9 @@ _h() { _files -W ~/ -/; }
 compdef _h h
 
 # wh to cd to windows home
-wh() { cd /c/Users/gspake/$1; }
+wh() { cd ${HOME_DIRECTORY}/$1; }
 # tab complete wh against windows home
-_wh() { _files -W /c/Users/gspake -/; }
+_wh() { _files -W ${HOME_DIRECTORY} -/; }
 compdef _wh wh
 
 # c to cd to ~/code

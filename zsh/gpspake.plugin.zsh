@@ -1,36 +1,29 @@
-#!/usr/bin/env bash
-export DEVELOPMENT_DIRECTORY="$HOME/code"
-export DOTFILES_DIRECTORY="$HOME/code/dotfiles"
-export PATH="$(yarn global bin | grep -o '/.*'):$PATH"
+export CODE_DIRECTORY="/c/Users/gspake/code"
+export DOTFILES_DIRECTORY="/c/Users/gspake/code/dotfiles"
+export HOSTS_PATH="/c/Windows/System32/drivers/etc/hosts"
 
-# ALIASES
-## ll to detailed direct list
+# ll to detailed direct list
 alias ll='ls -la'
-# edit bash profile
-alias bashedit='vim ${DOTFILES_DIRECTORY}/bash/.bash_profile'
-# source bash profile after editing
-alias bashsource='source ${DOTFILES_DIRECTORY}/bash/.bash_profile'
 # edit zsh
-alias zshedit='atom ${DOTFILES_DIRECTORY}/zsh/gpspake.plugin.zsh'
+alias zshedit='vim ${DOTFILES_DIRECTORY}/zsh/gpspake/gpspake.plugin.zsh'
 # source zsh after editing
-alias zshsource='source ${DOTFILES_DIRECTORY}/zsh/gpspake.plugin.zsh'
-# edit hosts
-alias hostsedit='sudo vim /private/etc/hosts'
+alias zshsource='source ${DOTFILES_DIRECTORY}/zsh/gpspake/gpspake.plugin.zsh'
 # go to dotfiles
 alias dotfiles='cd ${DOTFILES_DIRECTORY}'
-# go to development
-alias dev='cd ${DEVELOPMENT_DIRECTORY}'
 #edit hosts
-alias hosts='atom /etc/hosts'
+alias hosts='sudo vim ${HOSTS_PATH}'
 
 ## ll after cd - @speakingcode
-function cd() {
+cd() {
   new_directory="$*";
   if [ $# -eq 0 ]; then
     new_directory=${HOME};
   fi;
-  builtin cd "${new_directory}" && ls -la
+  builtin cd "${new_directory}" && ll
 }
+
+# mkdir and cd
+mkcd() { mkdir -p "$@" && cd "$_"; }
 
 # h to cd to home - @vongrippen
 h() { cd ~/$1; }
@@ -38,12 +31,15 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
-# d to cd to development - @vongrippen
-unalias d
-code() { cd ~/code/$1; }
-# tab complete d against development
-_code() { _files -W ~/code -/; }
-compdef _code code
+# wh to cd to windows home
+wh() { cd /c/Users/gspake/$1; }
+# tab complete wh against windows home
+_wh() { _files -W /c/Users/gspake -/; }
+compdef _wh wh
 
-#mkdir and cd
-function mkcd() { mkdir -p "$@" && cd "$_"; }
+# c to cd to ~/code
+c() { cd ${CODE_DIRECTORY}/$1; }
+# tab complete c against code
+_c() { _files -W ${CODE_DIRECTORY} -/; }
+compdef _c c
+

@@ -30,7 +30,5 @@ plugins=(git gpspake gpspake-wsl)
 
 Use brew to install CLI and desktop applications on OSX
 ```bash
-$ ~/dotfiles/scripts/setup.sh
+$ ~/dotfiles/scripts/brew.sh
 ```
-
-

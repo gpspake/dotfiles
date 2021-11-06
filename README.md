@@ -2,8 +2,8 @@
 
 ## Getting Started
 
-These dotfiles are configured to be placed at `${HOME}/code` 
-by default. If placed in a different location, 
+These dotfiles are configured to be placed at `${HOME}/code/dotfiles` 
+by default. If you want to put them in a different location, 
 update environment variables accordingly.
 
 Create a code directory if there isn't one
@@ -26,10 +26,11 @@ For Windows Subsystem Linux, add `gpspake-wsl` to plugins in `~/.zshrc`
 plugins=(git gpspake gpspake-wsl)
 ```
 
-## Brew
+## Homebrew
 
-Use brew to install desktop applications on OSX
+Use brew to install CLI and desktop applications on OSX
 ```bash
 $ ~/dotfiles/scripts/setup.sh
 ```
+
 

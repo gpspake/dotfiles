@@ -4,8 +4,6 @@
 # Homebrew
 # --------
 
-export HOMEBREW_BREWFILE=${DOTFILES_DIRECTORY}/homebrew/Brewfile
-
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -13,4 +11,4 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap Homebrew/bundle
 
 # run brew bundle
-brew bundle -v
+brew bundle -vd --file=${DOTFILES_DIRECTORY}/homebrew/Brewfile

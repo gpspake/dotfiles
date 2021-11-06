@@ -1,26 +1,26 @@
-# Install taps
 tap 'caskroom/cask'
 
-# Install system dependencies
 brew 'brew-cask'
+brew "imagemagick"
 brew 'node'
 brew 'wget'
-brew 'wp-cli'
+brew 'speedtest-cli'
+brew 'task'
+brew 'tree'
+brew 'youtube-dl'
 
-# Install applications
 cask 'alfred'
 cask 'bettertouchtool'
 cask 'caffeine'
-cask 'dropbox'
+cask 'datagrip'
 cask 'filezilla'
 cask 'firefox'
-cask 'flux'
 cask 'google-chrome'
+cask 'gitkraken'
 cask 'iterm2'
-cask 'phpstorm'
-cask 'sourcetree'
-cask 'spotify'
-cask 'steam'
-cask 'sublime-text'
-cask 'transmission'
+cask 'pycharm'
+cask 'rider'
+cask 'slack'
+cask 'visual-studio-code'
 cask 'vlc'
+cask 'webstorm'

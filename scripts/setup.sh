@@ -22,3 +22,5 @@ ln -s ${DOTFILES_DIRECTORY}/vim/.vim ${HOME}/.vim
 # zsh
 ln -s ${DOTFILES_DIRECTORY}/zsh/gpspake ${HOME}/.oh-my-zsh/custom/plugins/gpspake
 ln -s ${DOTFILES_DIRECTORY}/zsh/gpspake-wsl ${HOME}/.oh-my-zsh/custom/plugins/gpspake-wsl
+
+sed -i '' 's/plugins=(git)/plugins=(git, gpspake)/' ${HOME}/.zshrc

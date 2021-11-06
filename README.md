@@ -21,13 +21,6 @@ Run setup script to create symlinks
 $ ~/dotfiles/scripts/setup.sh
 ```
 
-## ZSH
-
-To complete zsh setup, add `gpspake` to plugins in `~/.zshrc`
-```
-plugins=(git gpspake)
-```
-
 For Windows Subsystem Linux, add `gpspake-wsl` to plugins in `~/.zshrc`
 ```
 plugins=(git gpspake gpspake-wsl)

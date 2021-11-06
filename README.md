@@ -13,7 +13,7 @@ $ mkdir -p ~/code
 
 Clone dotfiles repo to code directory
 ```bash
-$ git clone https://github.com/gpspake/dotfiles $HOME/code
+$ git clone https://github.com/gpspake/dotfiles $HOME/code/dotfiles
 ```
 
 Run setup script to create symlinks

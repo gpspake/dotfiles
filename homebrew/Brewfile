@@ -8,6 +8,7 @@ brew 'speedtest-cli'
 brew 'task'
 brew 'tree'
 brew 'youtube-dl'
+brew 'ncdu'
 
 cask 'alfred'
 cask 'bettertouchtool'

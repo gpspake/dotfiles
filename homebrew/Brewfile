@@ -9,6 +9,7 @@ brew 'task'
 brew 'tree'
 brew 'youtube-dl'
 brew 'ncdu'
+brew 'gh'
 
 cask 'alfred'
 cask 'bettertouchtool'
